@@ -1,0 +1,227 @@
+/* Reset Styles */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+body {
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+/* Header Styles */
+header {
+    background: #333;
+    color: white;
+    padding: 20px;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+}
+nav ul li {
+    display: inline;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* Sorting & Filtering Controls */
+.sort-buttons, .filter-container {
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+button, select {
+    padding: 10px 15px;
+    border: none;
+    background: #3498db;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+button:hover, select:hover {
+    background: #2980b9;
+}
+
+/* Active Button */
+button.active {
+    background: #2ecc71;
+}
+
+/* Grid Layout */
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Grid Item */
+.grid-item {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: 20px;
+    width: 200px; 
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+    background: white;
+    opacity: 1; 
+    transform: scale(1); 
+}
+
+.grid-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Image */
+.grid-item img {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    object-fit:cover
+}
+
+/* Title */
+.grid-item h3 {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Rating */
+.rating {
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 5px;
+}
+
+/* Button */
+.button {
+    display: inline-block;
+    background: #e74c3c;
+    color: white;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+.button:hover {
+    background: #c0392b;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* Styling for Item Detail Page */
+.product-container {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+}
+
+.product-container img {
+    width: auto;
+    height: 350px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+/* Smooth Animations */
+.grid-item {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Show items when displayed */
+.grid-item.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Hide items when filtering */
+.grid-item.hide {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    position: relative; /* FIXED: Changed from absolute */
+    visibility: hidden; /* FIXED: Ensures it doesn't break layout */
+}
+
+/* Mobile-Friendly Layout */
+@media (max-width: 768px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .grid-item {
+        width: 100%;
+        max-width: 250px;
+        margin: auto;
+    }
+
+    .sort-buttons, .filter-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    button, select {
+        width: 90%;
+        max-width: 250px;
+    }
+}
+
+/* Extra Small Screens */
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-item {
+        max-width: 90%;
+    }
+
+    .grid-item img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .sort-buttons, .filter-container {
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+}
